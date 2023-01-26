@@ -5,8 +5,8 @@ import { MyPipelineStack } from '../lib/my-pipeline-stack';
 const app = new cdk.App();
 new MyPipelineStack(app, 'MyPipelineStack', {
   env: {
-    account: '111111111111',
-    region: 'eu-west-1',
+    account: '395929101814',
+    region: 'us-east-2',
   }
 });
 
