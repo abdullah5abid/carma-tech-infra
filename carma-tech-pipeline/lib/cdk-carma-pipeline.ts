@@ -17,12 +17,12 @@ export class CdkCarmaPipeline extends cdk.Stack {
 			pipelineName: "CarmaTechPipelineChanged",
 
 			synth: new CodeBuildStep("SynthStep", {
-				input: CodePipelineSource.connection(
+				input: CodePipelineSource.gitHub(
 					"abdullah5abid/carma-tech-infra",
 					"carma-tech-pipeline",
-					{
-						connectionArn: "arn:aws:codestar-connections:us-east-1:395929101814:connection/a309133b-9334-4a3c-a482-4329599d7ad8"
-					}
+					// {
+					// 	connectionArn: "arn:aws:codestar-connections:us-east-1:395929101814:connection/a309133b-9334-4a3c-a482-4329599d7ad8"
+					// }
 				),
 				installCommands: ["npm install -g aws-cdk"],
 				commands: ["npm ci", "npm run build", "npx cdk synth"]
