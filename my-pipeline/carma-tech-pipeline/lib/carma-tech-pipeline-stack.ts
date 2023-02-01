@@ -9,7 +9,7 @@ export class CarmaTechPipelineStack extends cdk.Stack {
     const pipeline = new CodePipeline(this, 'CarmaTechPipeline', {
       pipelineName: 'CarmaTechPipeline',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub('abdullah5abid/carma-tech-infra', 'main'),
+        input: CodePipelineSource.gitHub('abdullah5abid/carma-tech-infra', 'cdk-carma-tech-pipeline'),
         commands: ['npm ci', 'npm run build', 'npx cdk synth']
       })
     });
